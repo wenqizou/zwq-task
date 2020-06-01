@@ -89,11 +89,16 @@ class IO {
         })
     }
     constructor(fn) { //IO 函子就不是传value ,而是一个fn
-        this.value = fn
+        this._value = fn
     }
     map(fn) {
-        // this.value == function (){ return value }
         return new IO(fp.flowRight(fn, this.value)) //IO 的map 是返回一个新的函子，不是of 直接调用。并将两个函数组合
+    }
+    join() {
+        return this._value()
+    }
+    flatMap() {
+        return this.map(fn).join() //this.map(fn) 返回一个嵌套函子执行一下join扁平化
     }
 }
 log(IO.of(process).map(p => p.execPath).value())
