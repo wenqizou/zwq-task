@@ -1,0 +1,11 @@
+{
+    "name": "generator-sample",
+    "version": "1.0.0",
+    "description": "sample generator",
+    "main": "index.js",
+    "author": "zwq",
+    "license": "MIT",
+    "dependencies": {
+        "yeoman-generator": "^4.10.1"
+    }
+}
