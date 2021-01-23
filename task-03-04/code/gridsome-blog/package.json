@@ -1,0 +1,19 @@
+{
+  "name": "gridsome-blog",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "dev": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "@gridsome/source-strapi": "^0.2.0",
+    "axios": "^0.21.0",
+    "element-ui": "^2.14.1",
+    "gridsome": "^0.7.0",
+    "markdown-it": "^12.0.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  }
+}
