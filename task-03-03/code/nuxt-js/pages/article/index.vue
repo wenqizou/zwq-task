@@ -3,23 +3,7 @@
     <div class="banner">
       <div class="container">
         <h1>{{ article.title }}</h1>
-
-        <div class="article-meta">
-          <a href=""><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
-          <div class="info">
-            <a href="" class="author">Eric Simons</a>
-            <span class="date">January 20th</span>
-          </div>
-          <button class="btn btn-sm btn-outline-secondary">
-            <i class="ion-plus-round"></i>
-            &nbsp; Follow Eric Simons <span class="counter">(10)</span>
-          </button>
-          &nbsp;&nbsp;
-          <button class="btn btn-sm btn-outline-primary">
-            <i class="ion-heart"></i>
-            &nbsp; Favorite Post <span class="counter">(29)</span>
-          </button>
-        </div>
+        <ArticleMate :article="article"></ArticleMate>
       </div>
     </div>
 
@@ -31,25 +15,7 @@
       <hr />
 
       <div class="article-actions">
-        <div class="article-meta">
-          <a href="profile.html"
-            ><img src="http://i.imgur.com/Qr71crq.jpg"
-          /></a>
-          <div class="info">
-            <a href="" class="author">Eric Simons</a>
-            <span class="date">January 20th</span>
-          </div>
-
-          <button class="btn btn-sm btn-outline-secondary">
-            <i class="ion-plus-round"></i>
-            &nbsp; Follow Eric Simons <span class="counter">(10)</span>
-          </button>
-          &nbsp;
-          <button class="btn btn-sm btn-outline-primary">
-            <i class="ion-heart"></i>
-            &nbsp; Favorite Post <span class="counter">(29)</span>
-          </button>
-        </div>
+        <ArticleMate :article="article"></ArticleMate>
       </div>
 
       <div class="row">
@@ -71,27 +37,26 @@
             </div>
           </form>
 
-          <div class="card">
+          <div class="card" v-for="(card, i) in comments" :key="'card' + i">
             <div class="card-block">
               <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
+                {{ card.body }}
               </p>
             </div>
             <div class="card-footer">
               <a href="" class="comment-author">
                 <img
-                  src="http://i.imgur.com/Qr71crq.jpg"
+                  :src="card.author.image"
                   class="comment-author-img"
                 />
               </a>
               &nbsp;
-              <a href="" class="comment-author">Jacob Schmidt</a>
-              <span class="date-posted">Dec 29th</span>
+              <a href="#" class="comment-author">{{card.author.username}}</a>
+              <span class="date-posted">{{card.createdAt|date('MMM DD')}}</span>
             </div>
           </div>
 
-          <div class="card">
+          <!-- <div class="card">
             <div class="card-block">
               <p class="card-text">
                 With supporting text below as a natural lead-in to additional
@@ -113,26 +78,45 @@
                 <i class="ion-trash-a"></i>
               </span>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import { getArticleDetail } from '@/api/article'
+import { getArticleDetail, getComments } from '@/api/article'
 import MarkdownIt from 'markdown-it'
+import ArticleMate from './components/article-mate'
 export default {
+  components: { ArticleMate },
   middleware: 'auth',
-  name: 'article',
+  name: 'articleIndex',
   async asyncData({ params }) {
-    const { data }=await getArticleDetail(params.slug)
-    console.log(data);
-    const { article }=data
-    const md=new MarkdownIt()
-    article.body=md.render(article.body)
+    const [articleRes, commentsRes] = await Promise.all([
+      getArticleDetail(params.slug),
+      getComments(params.slug)
+    ])
+    const { article } = articleRes.data
+    const { comments } = commentsRes.data
+    console.log(article, comments);
+    const md = new MarkdownIt()
+    article.body = md.render(article.body)
     return {
-      article
+      article,
+      comments
+    }
+  },
+  head() {
+    return {
+      title: `${this.article.title} - RealWord`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.article.description
+        }
+      ]
     }
   }
 }

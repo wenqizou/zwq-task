@@ -155,25 +155,25 @@
 </template>
 <script>
 
-import { getArticle,getTag,getfeedArticle,addfeed,removefeed } from '@/api/article'
+import { getArticle, getTag, getfeedArticle, addfeed, removefeed } from '@/api/article'
 import { mapState } from 'vuex'
 export default {
   name: 'home',
-  watchQuery: ['page','tag','tab'],
+  watchQuery: ['page', 'tag', 'tab'],
   // asyncData函数的上下文就是方法
-  async asyncData({ query,store }) {
-    const curPage=Number.parseInt((query.page||1))
-    const limit=20
-    const _getArticle=store.state.user&&query.tab=='your_feed'? getfeedArticle:getArticle
-    const [articleRest,TagData]=await Promise.all([
+  async asyncData({ query, store }) {
+    const curPage = Number.parseInt((query.page || 1))
+    const limit = 20
+    const _getArticle = (store.state.user && query.tab == 'your_feed') ? getfeedArticle : getArticle
+    const [articleRest, TagData] = await Promise.all([
       _getArticle({
         limit,
-        offset: (curPage-1)*limit,
+        offset: (curPage - 1) * limit,
         tag: query.tag
       }),
       getTag()
     ])
-    articleRest.data.articles.forEach(e => e.favoriteDisable=false)
+    articleRest.data.articles.forEach(e => e.favoriteDisable = false)
     return {
       articles: articleRest.data.articles,
       articlesTotal: articleRest.data.articlesCount,
@@ -185,22 +185,22 @@ export default {
   computed: {
     ...mapState(['user']),
     pages() {
-      return Math.ceil(this.articlesTotal/this.limit)
+      return Math.ceil(this.articlesTotal / this.limit)
     }
   },
   methods: {
     async favorite(article) {
-      article.favoriteDisable=true
-      if(article.favorited) {
+      article.favoriteDisable = true
+      if (article.favorited) {
         await removefeed(article.slug)
-        article.favorited=false
-        article.favoritesCount+=-1
+        article.favorited = false
+        article.favoritesCount += -1
       } else {
         await addfeed(article.slug)
-        article.favorited=true
-        article.favoritesCount+=1
+        article.favorited = true
+        article.favoritesCount += 1
       }
-      article.favoriteDisable=false
+      article.favoriteDisable = false
     }
   }
 }

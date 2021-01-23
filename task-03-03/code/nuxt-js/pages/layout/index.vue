@@ -29,7 +29,7 @@
               >
             </li>
             <li class="nav-item">
-              <nuxt-link class="nav-link" to="/profile/1"
+              <nuxt-link class="nav-link" :to="'/profile/' + user.username"
                 ><img :src="user.image" class="user-pic" />
                 {{ user.username }}</nuxt-link
               >

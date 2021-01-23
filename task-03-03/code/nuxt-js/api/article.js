@@ -1,4 +1,6 @@
-import {request} from '../plugins/request'
+import {
+    request
+} from '../plugins/request'
 
 export const getArticle = (params) => request({
     method: 'get',
@@ -28,4 +30,9 @@ export const removefeed = (slug) => request({
 export const getArticleDetail = (slug) => request({
     method: 'get',
     url: `/api/articles/${slug}`
+})
+
+export const getComments = (slug) => request({
+    method: 'get',
+    url: `/api/articles/${slug}/comments`
 })

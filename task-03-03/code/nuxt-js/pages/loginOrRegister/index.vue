@@ -61,14 +61,14 @@
   </div>
 </template>
 <script>
-import { login,register } from '../../api/login'
+import { login, register } from '../../api/login'
 // 仅在客户端加载
-const Cookie=process.client? require('js-cookie'):undefined
+const Cookie = process.client ? require('js-cookie') : undefined
 export default {
   name: 'Login',
   computed: {
     isLogin() {
-      return this.$route.name=='login'
+      return this.$route.name == 'login'
     }
   },
   data() {
@@ -84,15 +84,15 @@ export default {
   methods: {
     async submit() {
       try {
-        const { data }=this.isLogin? await login(this.user):await register(this.user)
+        const { data } = this.isLogin ? await login(this.user) : await register(this.user)
         console.log(data);
-        this.$store.commit('setUser',data.user)
-        Cookie.set('user',data.user)
+        this.$store.commit('setUser', data.user)
+        Cookie.set('user', data.user)
 
-        data&&this.$router.push('/')
-      } catch(error) {
+        data && this.$router.push('/')
+      } catch (error) {
         console.dir(error)
-        this.errors=error.response.data.errors
+        this.errors = error.response.data.errors
       }
     }
   }

@@ -6,46 +6,38 @@
       {
         "path": "",
         "name": "home",
-        "component": "C:\\\\project\\\\code\\\\homework\\\\zwq-task\\\\zwq-task\\\\task-03-03\\\\code\\\\nuxt-js\\\\pages\\\\home",
-        "_name": "_567d8f67"
+        "component": "C:\\\\project\\\\code\\\\homework\\\\zwq-task\\\\zwq-task\\\\task-03-03\\\\code\\\\nuxt-js\\\\pages\\\\home"
       },
       {
         "path": "/login",
         "name": "login",
-        "component": "C:\\\\project\\\\code\\\\homework\\\\zwq-task\\\\zwq-task\\\\task-03-03\\\\code\\\\nuxt-js\\\\pages\\\\loginOrRegister",
-        "_name": "_2a7d6a67"
+        "component": "C:\\\\project\\\\code\\\\homework\\\\zwq-task\\\\zwq-task\\\\task-03-03\\\\code\\\\nuxt-js\\\\pages\\\\loginOrRegister"
       },
       {
         "path": "/register",
         "name": "register",
-        "component": "C:\\\\project\\\\code\\\\homework\\\\zwq-task\\\\zwq-task\\\\task-03-03\\\\code\\\\nuxt-js\\\\pages\\\\loginOrRegister",
-        "_name": "_2a7d6a67"
+        "component": "C:\\\\project\\\\code\\\\homework\\\\zwq-task\\\\zwq-task\\\\task-03-03\\\\code\\\\nuxt-js\\\\pages\\\\loginOrRegister"
       },
       {
         "path": "/profile/:username",
         "name": "profile",
-        "component": "C:\\\\project\\\\code\\\\homework\\\\zwq-task\\\\zwq-task\\\\task-03-03\\\\code\\\\nuxt-js\\\\pages\\\\profile",
-        "_name": "_abfcfbbe"
+        "component": "C:\\\\project\\\\code\\\\homework\\\\zwq-task\\\\zwq-task\\\\task-03-03\\\\code\\\\nuxt-js\\\\pages\\\\profile"
       },
       {
         "path": "/settings",
         "name": "settings",
-        "component": "C:\\\\project\\\\code\\\\homework\\\\zwq-task\\\\zwq-task\\\\task-03-03\\\\code\\\\nuxt-js\\\\pages\\\\settings",
-        "_name": "_276ed2ab"
+        "component": "C:\\\\project\\\\code\\\\homework\\\\zwq-task\\\\zwq-task\\\\task-03-03\\\\code\\\\nuxt-js\\\\pages\\\\settings"
       },
       {
         "path": "/editor",
         "name": "editor",
-        "component": "C:\\\\project\\\\code\\\\homework\\\\zwq-task\\\\zwq-task\\\\task-03-03\\\\code\\\\nuxt-js\\\\pages\\\\editor",
-        "_name": "_b0c78c16"
+        "component": "C:\\\\project\\\\code\\\\homework\\\\zwq-task\\\\zwq-task\\\\task-03-03\\\\code\\\\nuxt-js\\\\pages\\\\editor"
       },
       {
         "path": "/article/:slug",
         "name": "article",
-        "component": "C:\\\\project\\\\code\\\\homework\\\\zwq-task\\\\zwq-task\\\\task-03-03\\\\code\\\\nuxt-js\\\\pages\\\\article",
-        "_name": "_de687524"
+        "component": "C:\\\\project\\\\code\\\\homework\\\\zwq-task\\\\zwq-task\\\\task-03-03\\\\code\\\\nuxt-js\\\\pages\\\\article"
       }
-    ],
-    "_name": "_9929d89c"
+    ]
   }
 ]
