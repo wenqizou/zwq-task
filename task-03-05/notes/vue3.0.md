@@ -10,7 +10,7 @@ vue create 选择vue3.0，其实默认也是3.0
 
 
 
-![image-20210203201801109](C:\Users\mi\AppData\Roaming\Typora\typora-user-images\image-20210203201801109.png)
+![image-20210203201801109](note-img\image-20210203201801109.png)
 
 
 
@@ -20,9 +20,9 @@ vue create 选择vue3.0，其实默认也是3.0
 
 
 
-![image-20210203212329152](C:\Users\mi\AppData\Roaming\Typora\typora-user-images\image-20210203212329152.png)
+![image-20210203212329152](note-img\image-20210203212329152.png)
 
-![image-20210203212408868](C:\Users\mi\AppData\Roaming\Typora\typora-user-images\image-20210203212408868.png)
+![image-20210203212408868](.\.\note-img\image-20210203212408868.png)
 
 
 
@@ -97,21 +97,21 @@ stop()
 - track
 - trigger
 
-![image-20210208141911009](C:\Users\mi\AppData\Roaming\Typora\typora-user-images\image-20210208141911009.png)
+![image-20210208141911009](.\note-img\image-20210208141911009.png)
 
-![image-20210208142301523](C:\Users\mi\AppData\Roaming\Typora\typora-user-images\image-20210208142301523.png)
+![image-20210208142301523](.\note-img\image-20210208142301523.png)
 
 
 
 		## 模拟reactive
 
-![image-20210208143122299](C:\Users\mi\AppData\Roaming\Typora\typora-user-images\image-20210208143122299.png)
+![image-20210208143122299](note-img\image-20210208143122299.png)
 
 
 
 ## ref
 
-![image-20210208151913141](C:\Users\mi\AppData\Roaming\Typora\typora-user-images\image-20210208151913141.png)
+![image-20210208151913141](note-img\image-20210208151913141.png)
 
 
 
@@ -123,19 +123,19 @@ stop()
 
 静态web服务器
 
-![image-20210208163148077](C:\Users\mi\AppData\Roaming\Typora\typora-user-images\image-20210208163148077.png)
+![image-20210208163148077](note-img\image-20210208163148077.png)
 
 
 
 修改第三方模块路径
 
-![image-20210208163948485](C:\Users\mi\AppData\Roaming\Typora\typora-user-images\image-20210208163948485.png)
+![image-20210208163948485](note-img\image-20210208163948485.png)
 
 
 
 加载第三方
 
-![image-20210208164402413](C:\Users\mi\AppData\Roaming\Typora\typora-user-images\image-20210208164402413.png)
+![image-20210208164402413](note-img\image-20210208164402413.png)
 
 
 
@@ -143,4 +143,4 @@ stop()
 
 @vue/compiler-sfc
 
-![image-20210208165839426](C:\Users\mi\AppData\Roaming\Typora\typora-user-images\image-20210208165839426.png)
+![image-20210208165839426](note-img\image-20210208165839426.png)
